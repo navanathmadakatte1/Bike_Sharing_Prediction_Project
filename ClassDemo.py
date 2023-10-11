@@ -433,6 +433,7 @@ custom_css = """
         }
     </style>
 """
+st.markdown('<img src="Bike.jpeg" style="max-width: 100%;" />', unsafe_allow_html=True)
 
 st.markdown(custom_css, unsafe_allow_html=True)
 
