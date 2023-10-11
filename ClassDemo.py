@@ -433,7 +433,7 @@ custom_css = """
         }
     </style>
 """
-st.markdown('<img src="Bike.jpeg" style="max-width: 100%;" />', unsafe_allow_html=True)
+image = st.image("Bike (1).jpg", caption="Bike Sharing Usage Visualization", use_column_width=True)
 
 st.markdown(custom_css, unsafe_allow_html=True)
 
