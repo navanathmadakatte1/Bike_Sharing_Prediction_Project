@@ -438,7 +438,27 @@ image = st.image("Bike (1).jpg", caption="Bike Sharing Usage Visualization", use
 st.markdown(custom_css, unsafe_allow_html=True)
 
 # Title and Subheader
-st.title("Bike Rental Prediction App")
+import streamlit as st
+
+# Set the color to blue and pink
+blue_pink_color = 'linear-gradient(45deg, #3498db, #FF6B6B)'
+
+# Define the desired text size (18px)
+text_size = '18px'
+
+# Use HTML and CSS to style the title with a box, the blue and pink color, and a specific text size
+st.markdown(
+    f"""
+    <div style="background: {blue_pink_color}; padding: 10px; border-radius: 5px;">
+        <h2 style="color: white; text-align: center; font-size: {text_size};">Bike Rental Prediction App</h2>
+    </div>
+    <div>
+    <h1></h1>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+
 st.markdown('<p class="lemon-yellow-subheader">Enter the parameters and get predictions for bike rental counts</p>',
             unsafe_allow_html=True)
 
@@ -452,6 +472,14 @@ st.markdown('<p class="centered-subheader">Decision Tree Prediction:</p>', unsaf
 if st.checkbox("Show Decision Tree Prediction"):
     decision_tree_regressor = DecisionTreeRegressor(max_depth=8, min_samples_leaf=5, random_state=0)
     predict_bike_counts(decision_tree_regressor, "Decision Tree")
+    st.markdown(
+        f"""
+         <div>
+        <h1></h1>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
 else:
     dt_prediction_placeholder.empty()
 
@@ -460,6 +488,14 @@ st.markdown('<p class="centered-subheader">Random Forest Prediction:</p>', unsaf
 if st.checkbox("Show Random Forest Prediction"):
     random_forest_regressor = RandomForestRegressor(n_estimators=100, max_depth=19, random_state=0)
     predict_bike_counts(random_forest_regressor, "Random Forest")
+    st.markdown(
+        f"""
+         <div>
+        <h1></h1>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
 else:
     rf_prediction_placeholder.empty()
 
@@ -469,6 +505,14 @@ st.markdown('<p class="centered-subheader">XGBoost Prediction:</p>', unsafe_allo
 if st.checkbox("Show XGBoost Prediction"):
     xgboost_regressor = XGBRegressor(n_estimators=120, max_depth=9, learning_rate=0.3, random_state=0)
     predict_bike_counts(xgboost_regressor, "XGBoost")
+    st.markdown(
+        f"""
+         <div>
+        <h1></h1>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
 else:
     xgb_prediction_placeholder.empty()
 
