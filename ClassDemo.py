@@ -433,10 +433,6 @@ custom_css = """
         }
     </style>
 """
-image = st.image("Bike (1).jpg", caption="Bike Sharing Usage Visualization", use_column_width=True)
-
-st.markdown(custom_css, unsafe_allow_html=True)
-
 # Title and Subheader
 import streamlit as st
 
@@ -458,6 +454,12 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+
+image = st.image("Bike (1).jpg", caption="Bike Sharing Usage Visualization", use_column_width=True)
+
+st.markdown(custom_css, unsafe_allow_html=True)
+
+
 
 st.markdown('<p class="lemon-yellow-subheader">Enter the parameters and get predictions for bike rental counts</p>',
             unsafe_allow_html=True)
